@@ -1,0 +1,17 @@
+{
+  "name": "eventgriddebug",
+  "version": "0.1.0-beta",
+  "description": "simple http listener that pretty prints to console the JSON payload and optionally writes to random file names",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Shawn Cicoria",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "nodemon": "^1.18.3"
+  }
+}
