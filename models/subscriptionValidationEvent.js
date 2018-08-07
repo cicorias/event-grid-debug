@@ -1,4 +1,6 @@
 // To parse this data:   https://app.quicktype.io/
+
+// To parse this data:
 //
 //   const Convert = require("./file");
 //
@@ -146,6 +148,7 @@ const typeMap = {
     ], false),
     "Data": o([
         { json: "validationCode", js: "validationCode", typ: "" },
+        { json: "validationUrl", js: "validationUrl", typ: "" },
     ], false),
 };
 

@@ -12,13 +12,16 @@ app.use(bodyParser.text( { type: 'application/json' } ));
 app.use( (request, response) => {
   console.log('request ', request.url);
   console.log(request.body);
+
+  if ( request.headers['aeg-event-type'] === 'SubscriptionValidation'){
+
+    const validationEvent = Convert.toSubscriptionValidation(request.body);
+    response.end(JSON.stringify({validationResponse: validationEvent[0].data.validationCode }));
+
+  }
   
-  const validationEvent = Convert.toSubscriptionValidation(request.body);
 
   const responseBody = JSON.stringify( [{ message: 'Event Accepted'}] );
-
-  response
-
   response.writeHead(200, {
     'Content-Length': Buffer.byteLength(responseBody),
     'Content-Type': 'application/json' });
